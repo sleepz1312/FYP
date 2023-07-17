@@ -40,12 +40,12 @@ while ($row = mysqli_fetch_array($result)) {
         <h1>List of hotels</h1>
         <table border="2" cellpadding="2" cellspacing="2">
             <tr>
-                <th>Image</th>
-                <th>Hotel Name</th>
-                <th>Hotel Address</th>
-                <th>Hotel review</th>
-                <th>Contact number</th>
-                <th>Description</th>
+                <th>Thumbnail</th>
+                <th>Name</th>
+                <th>File Type</th>
+                <th>iFrame</th>
+                <th>Duration</th>
+                <th>Publish Date</th>
             </tr>
 
             <?php
