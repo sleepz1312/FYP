@@ -65,7 +65,7 @@ while ($row = mysqli_fetch_array($result)) {
 
                 <tr>
                     <td><img
-                            src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($arrContent[$id]['thumbnail']); ?>" />
+                            src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($picture); ?>" />
                     </td>
                     <td>
                         <?php echo $title; ?>
@@ -83,10 +83,10 @@ while ($row = mysqli_fetch_array($result)) {
                     <td>
                         <?php echo $publisher; ?>
                     </td>
-                                        <td>
+                    <td>
                         <?php echo $id; ?>
-                                            </td>
-                    </tr>
+                    </td>
+                </tr>
                 <?php
             }
             ?>
