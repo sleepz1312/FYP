@@ -50,7 +50,7 @@ if (!empty($row)) {
         </nav>
         <?php if (!empty($id)) { ?>
             <div style="width:350px;">
-                <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($arrContent[$id]['thumbnail']); ?>" />
+                <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($arrContent[$id]['content']); ?>" />
                 <br />
                 <b>File Type:</b>
                 <?php echo $filetype ?><br />
