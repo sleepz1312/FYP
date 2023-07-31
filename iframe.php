@@ -16,7 +16,7 @@
             mediaContainer.innerHTML = '';
 
             if (type === 'video') {
-                var videoElement = document.createElement('video');
+                var videoElement = document.createElement('video');z
                 videoElement.controls = true;
                 videoElement.src = path;
                 mediaContainer.appendChild(videoElement);

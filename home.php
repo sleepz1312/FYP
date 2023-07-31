@@ -32,7 +32,7 @@ while ($row = mysqli_fetch_array($result)) {
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="details.php">Hotel Reviews</a>
+                            <a class="nav-link" href="details copy.php">Hotel Reviews</a>
                         </li>
                     </ul>
                 </div>
@@ -73,7 +73,7 @@ while ($row = mysqli_fetch_array($result)) {
                     <td>
                         <?php echo $filetype; ?>
                     </td>
-                    <td><a href="details.php?asset_id=<?php echo $id; ?>">Click Here</a></td>
+                    <td><a href="details copy.php?asset_id=<?php echo $id; ?>">Click Here</a></td>
                     <td>
                         <?php echo $duration; ?>
                     </td>

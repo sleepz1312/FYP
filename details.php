@@ -69,6 +69,8 @@ if (!empty($row)) {
                                 <b>Intent:</b>
                 <?php echo $intent ?><br />
             </div>
+
+            
         <?php } ?>
 </body>
 
