@@ -55,7 +55,7 @@ if (!empty($row)) {
                 <?php if ($filetype == "LINK") { ?>
                     <!-- Vue component for LINK -->
                     <div id="app">
-                        <iframe-component :src="<?php echo $content ?>"></iframe-component>
+                        <iframe-component :src=" '<?php echo $content ?>' "></iframe-component>
                     </div>
                 <?php } elseif ($filetype == "IMG") { ?>
                     <!-- Vue component for IMG -->
@@ -80,7 +80,7 @@ if (!empty($row)) {
                 <?php } else { ?>
                     <!-- Vue component for default (fallback) -->
                     <div id="app">
-                        <iframe-component :src="content"></iframe-component>
+                        <iframe-component :src="'<?php echo $content ?>'"></iframe-component>
                     </div>
                 <?php } ?>
             </div>
