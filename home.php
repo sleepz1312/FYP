@@ -1,5 +1,18 @@
 <?php
+// include code to start session here
+session_start();
 include "dbFunctions.php";
+
+$msg = "";
+$logout = "";
+if (isset($_SESSION['username'])){
+$logout = "<a href='logout.php'>Logout</a>";
+$msg = "Welcome ".$_SESSION['username']."!";}
+
+else{
+    $msg = "Currently not logged in";
+    $logout = "<a href='login.php'>Login</a>";
+}
 
 $query = "SELECT * FROM asset";
 $result = mysqli_query($link, $query) or die(mysqli_error($link));
@@ -23,6 +36,7 @@ while ($row = mysqli_fetch_array($result)) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!--stylesheet-->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style2.css">
     <title>FYP prototype</title>
     <style>
     .carousel-inner .carousel-item .col-md-4 {
@@ -63,16 +77,9 @@ while ($row = mysqli_fetch_array($result)) {
 </head>
 
 <body>
-    <div class="row">
-        <ul class="topnav" id="myTopnav">
-            <li><img src="media/osmosis learn logo.png" alt="osmosis learn logo" class="logo" width="250" height="80">
-            </li>
-            <li><a href="#explore" class="explore">Explore</a></li>
-            <li><a href="#create" class="create">Create</a></li>
-            <li><a href="#events" class="events">Events</a></li>
-            <li><a href="#login" class="login">Log In</a></li>
-            <li><a href="#signup" class="signup">Sign Up</a></li>
-        </ul>
+    <?php include "navBar.php" ?>
+
+        <p align="middle"><?php echo $msg ?>!</p>
         <hr>
         <h1>Explore Assets</h1>
         <hr>
@@ -167,6 +174,8 @@ while ($row = mysqli_fetch_array($result)) {
                         You</a>
                 </button>
             </div>
+            
+
         </footer>
 
         <div class="footer footer-btm" style="background-color: #503620; color: white;">
@@ -180,6 +189,7 @@ while ($row = mysqli_fetch_array($result)) {
 
 <script src="https://unpkg.com/popper.js@1"></script>
 <script src="https://unpkg.com/tippy.js@5"></script>
+<script src="script.js"></script>
 
 <script>
 tippy('#author', {

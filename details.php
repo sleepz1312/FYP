@@ -148,7 +148,7 @@ if (!empty($row)) {
 
     <div class="footer footer-btm" style="background-color: #503620; color: white;">
         <div class="footer container justify-content-end text-end">
-            © 2023 Osmosis Learn
+            Â© 2023 Osmosis Learn
         </div>
     </div>
 </body>
