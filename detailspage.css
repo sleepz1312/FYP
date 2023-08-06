@@ -1,0 +1,91 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+li a {
+    display: block;
+    color: #808080;
+    text-align: center;
+    padding: 22px 22px;
+    text-decoration: none;
+    float: right;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+li a:hover {
+    color: #b88051;
+}
+
+.logo {
+    float: left;
+    height: 70px;
+    width: 147px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+hr {
+    color: #252525;
+}
+
+h1 {
+    font-family: sans-serif;
+    font-weight: lighter;
+    margin-right: 10px;
+    color: gray;
+}
+
+.uploaded-by {
+    padding-left: 60px;
+    font-size: 30px;
+    padding-bottom: 40px;
+}
+
+.authored-by {
+    padding-left: 40px;
+    font-size: 30px;
+    padding-bottom: 100px;
+}
+
+.time {
+    padding-left: 200px;
+    font-size: 15px;
+
+}
+
+.toprow {
+    color: #303030;
+    font-weight: lighter;
+    padding-top: 20px;
+}
+
+.secondrow {
+    color: #303030;
+    font-weight: lighter;
+    padding-top: 15px;
+}
+
+.publisher {
+    padding-left: 60px;
+}
+
+.author {
+    padding-left: 40px;
+    
+}
+
+@media screen and (max-width: 750px) {
+    .uploaded-by .authored-by .time {
+        width: 100%;
+    }
+}
+
+/*iframe*/
+#app {
+    padding-left: 50px;
+}
