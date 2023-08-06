@@ -63,3 +63,28 @@ if (!empty($row)) {
 ?>
 <!DOCTYPE html>
 <!-- Rest of the code remains unchanged -->
+
+$id=htmlspecialchars(_GET['asset_id']);
+$id=urlencode($_GET['asset_id'])
+
+<!-- <?php
+
+include "dbFunctions.php";
+
+$id = $_GET['asset_id'];
+$query = "SELECT * FROM asset WHERE asset_id='$id'";
+$result = mysqli_query($link, $query) or die(mysqli_error($link));
+$row = mysqli_fetch_array($result);
+if (!empty($row)) {
+    $filetype = $row['filetype'];
+    $author = $row['author'];
+    $intent = $row['intent'];
+    $picture = $row['thumbnail'];
+    $skilltags = $row['skill_tags'];
+    $publisher = $row['publisher'];
+    $title = $row['title'];
+    $content = $row['content'];
+    $duration = $row['duration'];
+    $date = $row['pub_date'];
+}
+?> -->

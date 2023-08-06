@@ -2,21 +2,21 @@
 
 include "dbFunctions.php";
 
-$id = $_GET['asset_id'];
+$id = isset($_GET['asset_id']) ? htmlspecialchars($_GET['asset_id'], ENT_QUOTES, 'UTF-8') : null;
 $query = "SELECT * FROM asset WHERE asset_id='$id'";
 $result = mysqli_query($link, $query) or die(mysqli_error($link));
 $row = mysqli_fetch_array($result);
 if (!empty($row)) {
-    $filetype = $row['filetype'];
-    $author = $row['author'];
-    $intent = $row['intent'];
-    $picture = $row['thumbnail'];
-    $skilltags = $row['skill_tags'];
-    $publisher = $row['publisher'];
-    $title = $row['title'];
-    $content = $row['content'];
-    $duration = $row['duration'];
-    $date = $row['pub_date'];
+    $filetype = htmlspecialchars($row['filetype'], ENT_QUOTES, 'UTF-8');
+    $author = htmlspecialchars($row['author'], ENT_QUOTES, 'UTF-8');
+    $intent = htmlspecialchars($row['intent'], ENT_QUOTES, 'UTF-8');
+    $picture = htmlspecialchars($row['thumbnail'], ENT_QUOTES, 'UTF-8');
+    $skilltags = htmlspecialchars($row['skill_tags'], ENT_QUOTES, 'UTF-8');
+    $publisher = htmlspecialchars($row['publisher'], ENT_QUOTES, 'UTF-8');
+    $title = htmlspecialchars($row['title'], ENT_QUOTES, 'UTF-8');
+    $content = htmlspecialchars($row['content'], ENT_QUOTES, 'UTF-8');
+    $duration = htmlspecialchars($row['duration'], ENT_QUOTES, 'UTF-8');
+    $date = htmlspecialchars($row['pub_date'], ENT_QUOTES, 'UTF-8');
 }
 ?>
 <!DOCTYPE html>
@@ -39,7 +39,8 @@ if (!empty($row)) {
 <body>
     <div class="row">
         <ul class="topnav" id="myTopnav">
-            <li><img src="media/osmosis learn logo.png" alt="osmosis learn logo" class="logo" width="250" height="80"></li>
+            <li><img src="media/osmosis learn logo.png" alt="osmosis learn logo" class="logo" width="250" height="80">
+            </li>
             <li><a href="#explore" class="explore">Explore</a></li>
             <li><a href="#create" class="create">Create</a></li>
             <li><a href="#events" class="events">Events</a></li>
@@ -153,7 +154,3 @@ if (!empty($row)) {
 </body>
 
 </html>
-
-
-$id=htmlspecialchars(_GET['asset_id']);
-$id=urlencode($_GET['asset_id'])
