@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-md navbar-light bg-light ">
+<nav class="navbar navbar-expand-md navbar-light bg-white ">
 <div id="menu" class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2 container-fluid">
     <ul class="navbar-nav mr-auto">
-        <center><a class="navbar-brand mx-auto" href="#"><img src="media/osmosis learn logo.png" alt="Logo" height="30" weight="30"/></a></center>
+        <center><a class="navbar-brand mx-auto" href="#"><img src="media/osmosis learn logo.png" alt="Logo" width="250" height="80"/></a></center>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
                 <span class="navbar-toggler-icon"></span>
             </button>
