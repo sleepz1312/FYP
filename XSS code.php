@@ -447,3 +447,25 @@ if (mysqli_num_rows($resultCheck) == 1) {
 </body>
 
 </html>
+
+<?php
+
+include "dbFunctions.php";
+
+$id = isset($_GET['asset_id']) ? htmlspecialchars($_GET['asset_id'], ENT_QUOTES, 'UTF-8') : null;
+$query = "SELECT * FROM asset WHERE asset_id='$id'";
+$result = mysqli_query($link, $query) or die(mysqli_error($link));
+$row = mysqli_fetch_array($result);
+if (!empty($row)) {
+    $filetype = htmlspecialchars($row['filetype'], ENT_QUOTES, 'UTF-8');
+    $author = htmlspecialchars($row['author'], ENT_QUOTES, 'UTF-8');
+    $intent = htmlspecialchars($row['intent'], ENT_QUOTES, 'UTF-8');
+    $picture = htmlspecialchars($row['thumbnail'], ENT_QUOTES, 'UTF-8');
+    $skilltags = htmlspecialchars($row['skill_tags'], ENT_QUOTES, 'UTF-8');
+    $publisher = htmlspecialchars($row['publisher'], ENT_QUOTES, 'UTF-8');
+    $title = htmlspecialchars($row['title'], ENT_QUOTES, 'UTF-8');
+    $content = htmlspecialchars($row['content'], ENT_QUOTES, 'UTF-8');
+    $duration = htmlspecialchars($row['duration'], ENT_QUOTES, 'UTF-8');
+    $date = htmlspecialchars($row['pub_date'], ENT_QUOTES, 'UTF-8');
+}
+?>

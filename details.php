@@ -1,12 +1,23 @@
 <?php
-
+session_start();
 include "dbFunctions.php";
 
 $id = isset($_GET['asset_id']) ? htmlspecialchars($_GET['asset_id'], ENT_QUOTES, 'UTF-8') : null;
+
+// Check if the user is logged in
+if (!isset($_SESSION['userId']) || empty($_SESSION['userId'])) {
+    // User is not logged in, show the pop-up alert
+    echo "<script>alert('You need to log in to access the details page.'); window.location = 'login.php';</script>";
+    exit;
+}
+
 $query = "SELECT * FROM asset WHERE asset_id='$id'";
 $result = mysqli_query($link, $query) or die(mysqli_error($link));
 $row = mysqli_fetch_array($result);
+
 if (!empty($row)) {
+    // Rest of your code for rendering the details page
+    // ...
     $filetype = htmlspecialchars($row['filetype'], ENT_QUOTES, 'UTF-8');
     $author = htmlspecialchars($row['author'], ENT_QUOTES, 'UTF-8');
     $intent = htmlspecialchars($row['intent'], ENT_QUOTES, 'UTF-8');
@@ -19,6 +30,9 @@ if (!empty($row)) {
     $date = htmlspecialchars($row['pub_date'], ENT_QUOTES, 'UTF-8');
 }
 ?>
+
+
+
 <!DOCTYPE html>
 <html>
 
@@ -34,6 +48,8 @@ if (!empty($row)) {
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
     <title>Filetype</title>
+</script>
+
 </head>
 
 <body>
