@@ -6,13 +6,11 @@ include "dbFunctions.php";
 $entered_username = $_POST['idusername'];
 $entered_password = $_POST['idpassword'];
 
-
 $msg = "";
 
 $queryCheck = "SELECT * FROM user
           WHERE username='$entered_username'
           AND password = SHA1('$entered_password')";
-
 
 $resultCheck = mysqli_query($link, $queryCheck) or die(mysqli_error($link));
 
@@ -21,25 +19,21 @@ if (mysqli_num_rows($resultCheck) == 1) {
     $_SESSION['userId'] = $row['user_id'];
     $_SESSION['username'] = $row['username'];
 
-
-    $msg = "<p><i>You are logged in as " . $_SESSION['username'] . "</p>";
+    $msg = "<p><i>You are logged in as " . htmlspecialchars($_SESSION['username'], ENT_QUOTES, 'UTF-8') . "</p>";
     $msg .= "</p><a href='home.php'>Home</a><p>";
 
-
     if (isset($_POST['remember'])) {
-        setcookie("username", $row['username'], time() + 3600 * 24 * 100);
+        setcookie("username", htmlspecialchars($row['username'], ENT_QUOTES, 'UTF-8'), time() + 3600 * 24 * 100);
     } else {
         setcookie("username", 0, time() - 3600);
     }
 
-
 } else {
     $msg = "<p>Sorry, you must enter a valid username and password to log in</p>";
     $msg .= "<p><a href='login.php'>Go back to login page</a></p>";
-
 }
-
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -59,10 +53,7 @@ if (mysqli_num_rows($resultCheck) == 1) {
 <body>
     <?php include "navBar.php" ?>
     <center>
-
-        <?php
-        echo $msg;
-        ?>
+        <?php echo $msg; ?>
     </center>
 </body>
 

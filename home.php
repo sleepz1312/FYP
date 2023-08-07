@@ -5,11 +5,11 @@ include "dbFunctions.php";
 
 $msg = "";
 $logout = "";
-if (isset($_SESSION['username'])){
-$logout = "<a href='logout.php'>Logout</a>";
-$msg = "Welcome ".$_SESSION['username']."!";}
-
-else{
+if (isset($_SESSION['username'])) {
+    $logout = "<a href='logout.php'>Logout</a>";
+    // Sanitize session data before echoing
+    $msg = "Welcome " . htmlspecialchars($_SESSION['username'], ENT_QUOTES, 'UTF-8') . "!";
+} else {
     $msg = "Currently not logged in";
     $logout = "<a href='login.php'>Login</a>";
 }
