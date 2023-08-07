@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <head>
     <title>Register</title>
     <meta charset="UTF-8">
