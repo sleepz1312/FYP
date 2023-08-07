@@ -49,7 +49,9 @@ if (!empty($row)) {
         </ul>
         <hr>
         <div class="navbottom" style="padding-left:50px;">
-            <i class="fas fa-home" href="home.php"></i>
+            <a href="home.php" style="text-decoration:none;color:black;">
+                <i class="fas fa-home"></i>
+            </a>
             <a> > </a>
             <?php echo $title; ?>
         </div>
