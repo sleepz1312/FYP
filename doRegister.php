@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <?php
 // php file that contains the common database connection code
 include "dbFunctions.php";
