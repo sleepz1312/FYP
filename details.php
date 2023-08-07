@@ -48,21 +48,13 @@ if (!empty($row)) {
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
     <title>Filetype</title>
-</script>
+    </script>
 
 </head>
 
 <body>
     <div class="row">
-        <ul class="topnav" id="myTopnav">
-            <li><img src="media/osmosis learn logo.png" alt="osmosis learn logo" class="logo" width="250" height="80">
-            </li>
-            <li><a href="#explore" class="explore">Explore</a></li>
-            <li><a href="#create" class="create">Create</a></li>
-            <li><a href="#events" class="events">Events</a></li>
-            <li><a href="#login" class="login">Log In</a></li>
-            <li><a href="#signup" class="signup">Sign Up</a></li>
-        </ul>
+        <?php include "navBar.php" ?>
         <hr>
         <div class="navbottom" style="padding-left:50px;">
             <a href="home.php" style="text-decoration:none;color:black;">
