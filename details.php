@@ -130,6 +130,47 @@ if (!empty($row)) {
                     </b>
                 </div>
                 <hr>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <i class="fas fa-info-circle fa-xl" style="color: #b88051;"></i>
+                                    </div>
+                                    <div class="col">
+                                        <i class="far fa-clone fa-xl" style="color: #b88051;"></i>
+                                    </div>
+                                    <div class="col">
+                                        <i class="far fa-copy fa-xl" style="color: #b88051;"></i>
+                                    </div>
+                                    <div class="col">
+                                        <i class="fas fa-user-friends fa-xl" style="color: #b88051;"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+
+                        </div>
+                        <div class="col">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <i class="far fa-lightbulb fa-xl" style="color: #b88051;"></i>
+                                    </div>
+                                    <div class="col">
+                                        <i class="far fa-bookmark fa-xl" style="color: #b88051;"></i>
+                                    </div>
+                                    <div class="col">
+                                        <i class="fas fa-share-alt fa-xl" style="color: #b88051;"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
                 <div class="information">
                     <b class="intent" style="font-size:30px; padding-top:20px; padding-left: 60px;">Intent of this Asset</b>
                     </br>
