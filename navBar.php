@@ -20,8 +20,8 @@
                     <li> <a class="login" href="login.php">Login/Register</a></li>
                 <?php } ?>
                 <li><a href="#explore" class="explore">Explore</a></li>
-                <li><a href="#create" class="create">Create</a></li>
-                <li><a href="#events" class="events">Events</a></li>
+                <li> <a class="create" style="color:lightgray">Create</a></li>
+                <li> <a class="events" style="color: lightgray">Events</a></li>
             </ul>
         </div>
     </div>
