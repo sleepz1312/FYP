@@ -1,23 +1,12 @@
 <?php
-session_start();
+
 include "dbFunctions.php";
 
 $id = isset($_GET['asset_id']) ? htmlspecialchars($_GET['asset_id'], ENT_QUOTES, 'UTF-8') : null;
-
-// Check if the user is logged in
-if (!isset($_SESSION['userId']) || empty($_SESSION['userId'])) {
-    // User is not logged in, show the pop-up alert
-    echo "<script>alert('You need to log in to access the details page.'); window.location = 'login.php';</script>";
-    exit;
-}
-
 $query = "SELECT * FROM asset WHERE asset_id='$id'";
 $result = mysqli_query($link, $query) or die(mysqli_error($link));
 $row = mysqli_fetch_array($result);
-
 if (!empty($row)) {
-    // Rest of your code for rendering the details page
-    // ...
     $filetype = htmlspecialchars($row['filetype'], ENT_QUOTES, 'UTF-8');
     $author = htmlspecialchars($row['author'], ENT_QUOTES, 'UTF-8');
     $intent = htmlspecialchars($row['intent'], ENT_QUOTES, 'UTF-8');
@@ -30,9 +19,6 @@ if (!empty($row)) {
     $date = htmlspecialchars($row['pub_date'], ENT_QUOTES, 'UTF-8');
 }
 ?>
-
-
-
 <!DOCTYPE html>
 <html>
 
@@ -48,8 +34,6 @@ if (!empty($row)) {
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
     <title>Filetype</title>
-    </script>
-
 </head>
 
 <body>
@@ -86,7 +70,7 @@ if (!empty($row)) {
                     <div id="app">
                         <iframe-component width="960" height="436" :src="'media/<?php echo $content ?>'"></iframe-component>
                     </div>
-                <?php } elseif ($filetype == "PDF") { ?>
+                <?php } elseif ($filetype == "pdf") { ?>
                     <!-- Vue component for PDF -->
                     <div id="app">
                         <iframe-component width="960" height="436" :src="'media/<?php echo $content ?>'"></iframe-component>
@@ -112,22 +96,30 @@ if (!empty($row)) {
                 });
             </script>
             <div style="font-weight:lighter;">
-                <div class="toprow">
-                    <b class="uploaded-by" style="padding-left:60px;">Uploaded By</b>
-                    <b class="authored-by" style="padding-left:40px;">Authored By</b>
-                    <b class="time">
-                        <?php echo $filetype ?>.
-                        <?php echo $duration ?> .Published
-                        <?php echo $date ?>
-                    </b>
-                </div>
-                <div class="secondrow" style="color:gray;padding-bottom:10px;">
-                    <b class="publisher" style="padding-left:60px;">
-                        <?php echo $publisher ?>
-                    </b>
-                    <b class="author" style="padding-left:180px;">
-                        <?php echo $author ?>
-                    </b>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <b class="uploaded-by" style="padding-left:60px;">Uploaded By</b>
+                            </br>
+                            <b class="publisher">
+                                <?php echo $publisher ?>
+                            </b>
+                        </div>
+                        <div class="col">
+                            <b class="authored-by" style="padding-left:40px;">Authored By</b>
+                            </br>
+                            <b class="author">
+                                <?php echo $author ?>
+                            </b>
+                        </div>
+                        <div class="col">
+                            <b class="info" style="font:10px;padding-left:0;color:#8c8581;">
+                                <?php echo $filetype ?>.
+                                <?php echo $duration ?> .Published
+                                <?php echo $date ?>
+                            </b>
+                        </div>
+                    </div>
                 </div>
                 <hr>
                 <div class="container">
@@ -172,10 +164,23 @@ if (!empty($row)) {
                 </div>
                 <hr>
                 <div class="information">
-                    <b class="intent" style="font-size:30px; padding-top:20px; padding-left: 60px;">Intent of this Asset</b>
+                    <b class="intent" style="font-size:30px; padding-top:20px; padding-left: 60px;">Intent of this
+                        Asset</b>
                     </br>
-                    <b class="container" style="padding-left:60px;padding-bottom:100px">
-                        <?php echo $intent ?>
+                    <b class="container" style="text-transform:none;">
+                        <div class="container">
+                            <?php echo $intent ?>
+                        </div>
+                    </b>
+                </div>
+                <div class="skilltags">
+                    <b class="skilltag" style="font-size:15px; padding-top:20px; padding-left: 60px;color:#8c8581;">SKILL
+                        TAGS</b>
+                    </br>
+                    <b class="container" style="text-transform:none;">
+                        <div class="container">
+                            <?php echo $skilltags ?>
+                        </div>
                     </b>
                 </div>
             </div>
@@ -197,9 +202,9 @@ if (!empty($row)) {
         </div>
     </footer>
 
-    <div class="footer footer-btm" style="background-color: #503620; color: white;">
+    <div class="footer footer-btn" style="background-color: #503620; color: white;">
         <div class="footer container justify-content-end text-end">
-            Â© 2023 Osmosis Learn
+            © 2023 Osmosis Learn
         </div>
     </div>
 </body>
