@@ -74,7 +74,7 @@ if (!empty($row)) {
                 <?php } elseif ($filetype == "IMG") { ?>
                     <!-- Vue component for IMG -->
                     <div id="app">
-                        <iframe-component width="960" height="436" :src="'media/<?php echo $content ?>'"></iframe-component>
+                        <iframe-component width="960" height="436" :src="'https://images.pexels.com/photos/2607544/pexels-photo-2607544.jpeg'"></iframe-component>
                     </div>
                 <?php } elseif ($filetype == 'MP3') { ?>
                     <!-- Vue component for MP3 -->
@@ -86,7 +86,7 @@ if (!empty($row)) {
                     <div id="app">
                         <iframe-component width="960" height="436" :src="'media/<?php echo $content ?>'"></iframe-component>
                     </div>
-                <?php } elseif ($filetype == "pdf") { ?>
+                <?php } elseif ($filetype == "PDF") { ?>
                     <!-- Vue component for PDF -->
                     <div id="app">
                         <iframe-component width="960" height="436" :src="'media/<?php echo $content ?>'"></iframe-component>
